@@ -10,26 +10,15 @@ require 'osx/cocoa'
 require 'pp'
 
 class ShaneApp < OSX::NSObject
+  ib_outlet :menu
+  
   def applicationDidFinishLaunching(sender)
+      puts "Menu #{@menu.inspect}"
       statusbar = OSX::NSStatusBar.systemStatusBar 
-      pp statusbar
       item = statusbar.statusItemWithLength(OSX::NSVariableStatusItemLength) 
-      pp item
       image = OSX::NSImage.alloc.initWithContentsOfFile("/Users/phurley/projects/ShaneNotes/smile.tiff") 
-      pp image
       item.setImage(image) 
       
-      menu = OSX::NSMenu.alloc.init 
-      item.setMenu(menu) 
-
-      mitem = menu.addItemWithTitle_action_keyEquivalent( "Speak", "speak", '') 
-      mitem.setTarget(self) 
-      mitem = menu.addItemWithTitle_action_keyEquivalent( "Quit", "terminate:", 'q') 
-      mitem.setKeyEquivalentModifierMask(OSX::NSCommandKeyMask) 
-      mitem.setTarget(OSX::NSApp)     
+      item.setMenu(@menu) 
   end
 end
-
-# set up the application delegate
-$delegate = ShaneApp.alloc.init
-OSX::NSApplication.sharedApplication.setDelegate($delegate)
