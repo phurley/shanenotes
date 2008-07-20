@@ -27,17 +27,20 @@ class NoteController < OSX::NSObject
   end
     
   def load_file(fname)
+    puts "load_file #{fname}"
     fname = ShaneApp.mkfname(fname)
     data = NSData.dataWithContentsOfFile(fname)
+    pp data
     everything = NSRange.new(0, @text.textStorage.length)
     @text.replaceCharactersInRange_withRTF(everything, data)
   end
 
   def write_file(fname)
+    puts "write_file #{fname}"
     fname = ShaneApp.mkfname(fname)
     everything = NSRange.new(0, @text.textStorage.length) 
     data = @text.RTFFromRange(everything)
-    data.writeToFile_atomically(fname, true)
+    pp data.writeToFile_atomically(fname, true)
   end
   
   # GET => Advice to a Young Scientst
