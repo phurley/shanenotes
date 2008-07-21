@@ -8,8 +8,16 @@
 
 require 'osx/cocoa'
 require 'pp'
+require 'time'
 
 require 'ShaneApp.rb'
+
+
+# Actions:
+#  1. Load Page from combo box (file must exist)
+#  2. Click WikiLink ->
+#     a. Page exists (change combo box and load page)
+#     b. New Page (create template file, rescan files for combo box, do above)
 
 class NoteController < OSX::NSObject
   include OSX
@@ -19,7 +27,20 @@ class NoteController < OSX::NSObject
   
   def textView_clickedOnLink_atIndex(tv, link, index)
     puts "It worked: #{link}"
-    load_file(link)
+    
+    unless ShaneApp.files.include?(link)
+      data = NSText.new
+      data.string = "Shane Note create #{Time.now.to_s}"
+      fname = ShaneApp.mkfname(link)
+      puts "Writing #{data.string} to #{fname}"
+      
+      everything = NSRange.new(0, data.textStorage.length) 
+      data = data.RTFFromRange(everything)
+      data.writeToFile_atomically(fname, false)
+      ShaneApp.rescan
+    end
+    
+    # load_file(link)
     true
   end
   
@@ -44,9 +65,6 @@ class NoteController < OSX::NSObject
     puts "load_file #{fname}"
     fname = ShaneApp.mkfname(fname)
     data = NSData.dataWithContentsOfFile(fname)
-    unless data
-      data = NSData.new
-    end
     
     everything = NSRange.new(0, @text.textStorage.length)
     @text.replaceCharactersInRange_withRTF(everything, data)
@@ -76,7 +94,7 @@ class NoteController < OSX::NSObject
 
   def comboBoxSelectionDidChange(note)
     old_fname = note.object.stringValue
-    write_file(old_fname)
+    write_file(old_fname) unless old_fname.empty?
     
     fname = ShaneApp.files[note.object.indexOfSelectedItem]
     load_file(fname)

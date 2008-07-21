@@ -28,6 +28,10 @@ class ShaneApp < OSX::NSObject
       dir
     end
     
+    def rescan
+      @files = nil
+    end
+    
     def files
       @files ||= Dir.glob(File.join(notesdir, "*.rtf"))
     end
