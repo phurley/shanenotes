@@ -19,7 +19,20 @@ class NoteController < OSX::NSObject
   
   def test
     everything = NSRange.new(0, @text.textStorage.length) 
-    data = @text.RTFFromRange(everything)
+    data = @text.textStorage
+#    data.string.to_s.scan(/([A-Z][a-z0-9]+[A-Z][a-z0-9]+([A-Z][a-z0-9]+)*)/) do |match|
+    data.string.to_s.scan(/([A-Z][a-z0-9]+[A-Z][A-Za-z0-9]+)/) do |match|
+      puts "\n\nScanning"
+      puts match.inspect
+      puts $~.offset(1)
+      pp $~.captures
+      start,stop = *$~.offset(1)
+      length = stop - start
+      range = NSRange.new(start, length)
+      attr = NSLinkAttributeName
+      data.addAttribute_value_range(attr, 1, range)
+#      pp data.attributedSubstringFromRange(range).to_s
+    end
   end
   
   def awakeFromNib
