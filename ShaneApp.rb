@@ -11,6 +11,15 @@ require 'pp'
 
 class ShaneApp < OSX::NSObject
   ib_outlet :menu
+  ib_outlet :window
+  ib_action :toggle_window
+  
+  def toggle_window(sender)
+    if @window
+      @window.setIsVisible(!@window.isVisible)
+#      puts @window.objc_methods.sort.join("\n")
+    end
+  end
 
   def applicationDidFinishLaunching(sender)
       statusbar = OSX::NSStatusBar.systemStatusBar 

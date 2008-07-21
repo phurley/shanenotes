@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>891736D40E34FCB800C0B6A1</string>
+				<string>891736FB0E35176F00C0B6A1</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Info.plist</string>
+				<string>NoteController.rb</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>891736D50E34FCB800C0B6A1</string>
+						<string>891736FC0E35176F00C0B6A1</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Info.plist</string>
+						<string>NoteController.rb</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>891736D60E34FCB800C0B6A1</string>
+						<string>891736FE0E35176F00C0B6A1</string>
 						<key>history</key>
 						<array>
-							<string>891736D00E34FCAA00C0B6A1</string>
+							<string>891736FD0E35176F00C0B6A1</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,47 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>38 308 1089 694 0 0 1680 1028 </string>
+				<string>107 245 1089 694 0 0 1680 1028 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>891736FF0E35176F00C0B6A1</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>ShaneApp.rb</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>891737000E35176F00C0B6A1</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>ShaneApp.rb</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>891737010E35176F00C0B6A1</string>
+						<key>history</key>
+						<array>
+							<string>891736F00E35068500C0B6A1</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1089, 653}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>84 266 1089 694 0 0 1680 1028 </string>
 			</dict>
 		</dict>
 	</array>
@@ -311,12 +351,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>3</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -559,9 +601,10 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>8917369A0E34F00A00C0B6A1</string>
-		<string>/Users/phurley/projects/ShaneNotes/ShaneNotes.xcodeproj</string>
-		<string>891736D40E34FCB800C0B6A1</string>
+		<string>891736FF0E35176F00C0B6A1</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>891736FB0E35176F00C0B6A1</string>
+		<string>/Users/phurley/projects/ShaneNotes/ShaneNotes.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>906 311 690 397 0 0 1680 1028 </string>
