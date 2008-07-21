@@ -17,8 +17,10 @@ class NoteController < OSX::NSObject
   ib_outlet :combo
   ib_action :test
   
-  def clickedOnLink_atIndex(index)
-    puts "It worked: #{index}"
+  def textView_clickedOnLink_atIndex(tv, link, index)
+    puts "It worked: #{link}"
+    load_file(link)
+    true
   end
   
   def test
@@ -30,7 +32,7 @@ class NoteController < OSX::NSObject
       start,stop = *$~.offset(1)
       length = stop - start
       range = NSRange.new(start, length)
-      data.addAttribute_value_range(NSLinkAttributeName, 1, range)
+      data.addAttribute_value_range(NSLinkAttributeName, match.first, range)
     end
   end
   
@@ -42,7 +44,10 @@ class NoteController < OSX::NSObject
     puts "load_file #{fname}"
     fname = ShaneApp.mkfname(fname)
     data = NSData.dataWithContentsOfFile(fname)
-    pp data
+    unless data
+      data = NSData.new
+    end
+    
     everything = NSRange.new(0, @text.textStorage.length)
     @text.replaceCharactersInRange_withRTF(everything, data)
   end
