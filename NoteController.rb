@@ -17,6 +17,10 @@ class NoteController < OSX::NSObject
   ib_outlet :combo
   ib_action :test
   
+  def clickedOnLink_atIndex(index)
+    puts "It worked: #{index}"
+  end
+  
   def test
     data = @text.textStorage
     everything = NSRange.new(0, data.length)

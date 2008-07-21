@@ -46,6 +46,12 @@
 			PBXPerProjectTemplateStateSaveDate = 238186432;
 			PBXWorkspaceStateSaveDate = 238186432;
 		};
+		perUserProjectItems = {
+			891C6BE60E34E47B007C0E93 /* PBXBookmark */ = 891C6BE60E34E47B007C0E93 /* PBXBookmark */;
+			891C6BEA0E34E51A007C0E93 /* PBXTextBookmark */ = 891C6BEA0E34E51A007C0E93 /* PBXTextBookmark */;
+			891C6BED0E34E51A007C0E93 /* PBXTextBookmark */ = 891C6BED0E34E51A007C0E93 /* PBXTextBookmark */;
+			891C6BEE0E34E51A007C0E93 /* PBXTextBookmark */ = 891C6BEE0E34E51A007C0E93 /* PBXTextBookmark */;
+		};
 		sourceControlManager = 891C6B2B0E326FCA007C0E93 /* Source Control */;
 		userBuildSettings = {
 		};
@@ -59,7 +65,7 @@
 	4DDCA7110ACC9A6100E082CE /* Info.plist */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1030, 622}}";
-			sepNavSelRange = "{857, 0}";
+			sepNavSelRange = "{868, 0}";
 			sepNavVisRange = "{0, 895}";
 			sepNavWindowFrame = "{{38, 252}, {1089, 750}}";
 		};
@@ -103,9 +109,49 @@
 	};
 	891C6B2D0E326FF4007C0E93 /* ShaneApp.rb */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1030, 622}}";
-			sepNavSelRange = "{530, 0}";
-			sepNavVisRange = "{0, 574}";
+			sepNavIntBoundsRect = "{{0, 0}, {1030, 836}}";
+			sepNavSelRange = "{839, 0}";
+			sepNavVisRange = "{0, 804}";
+			sepNavWindowFrame = "{{86, 188}, {1089, 750}}";
 		};
+	};
+	891C6B510E328CF5007C0E93 /* NoteController.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1030, 2052}}";
+			sepNavSelRange = "{339, 0}";
+			sepNavVisRange = "{142, 705}";
+			sepNavWindowFrame = "{{31, 173}, {1089, 750}}";
+		};
+	};
+	891C6BE60E34E47B007C0E93 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4DDCA7110ACC9A6100E082CE /* Info.plist */;
+	};
+	891C6BEA0E34E51A007C0E93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DDCA7110ACC9A6100E082CE /* Info.plist */;
+		name = "Info.plist: 28";
+		rLen = 0;
+		rLoc = 868;
+		rType = 0;
+		vrLen = 895;
+		vrLoc = 0;
+	};
+	891C6BED0E34E51A007C0E93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 891C6B510E328CF5007C0E93 /* NoteController.rb */;
+		rLen = 0;
+		rLoc = 2147485178;
+		rType = 0;
+	};
+	891C6BEE0E34E51A007C0E93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 891C6B510E328CF5007C0E93 /* NoteController.rb */;
+		name = "NoteController.rb: 20";
+		rLen = 0;
+		rLoc = 339;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 142;
 	};
 }
