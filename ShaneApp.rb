@@ -14,7 +14,7 @@ class ShaneApp < OSX::NSObject
 
   def applicationDidFinishLaunching(sender)
       statusbar = OSX::NSStatusBar.systemStatusBar 
-      item = statusbar.statusItemWithLength(OSX::NSVariableStatusItemLength) 
+      item = statusbar.statusItemWithLength(OSX::NSVariableStatusItemLength)
       image = OSX::NSImage.alloc.initWithContentsOfFile("/Users/phurley/projects/ShaneNotes/smile.tiff") 
       item.setImage(image) 
 

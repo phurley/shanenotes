@@ -25,27 +25,29 @@ class NoteController < OSX::NSObject
   ib_outlet :combo
   ib_action :test
   
-  def textView_clickedOnLink_atIndex(tv, link, index)    
+  def switch_to(link)
     files = ShaneApp.files.map { |f| File.basename(f,'.rtf') }
-    unless index = files.index(link)
+    index = files.index(link)
+    
+    if index.nil?
       data = NSText.new
       data.string = "Shane Note create #{Time.now.to_s}"
       fname = ShaneApp.mkfname(link)
-      puts "Writing #{data.string} to #{fname}"
       
       everything = NSRange.new(0, data.textStorage.length) 
       data = data.RTFFromRange(everything)
       data.writeToFile_atomically(fname, false)
+      
       ShaneApp.rescan
       files = ShaneApp.files.map { |f| File.basename(f,'.rtf') }
       index = files.index(link)
     end
     
-    # load_file(link)
-    if index
-      @combo.selectItemAtIndex(index)
-    end
-    
+    @combo.selectItemAtIndex(index) if index
+  end
+  
+  def textView_clickedOnLink_atIndex(tv, link, index)    
+    switch_to(link)
     true
   end
   
@@ -68,7 +70,7 @@ class NoteController < OSX::NSObject
   end
   
   def awakeFromNib
-    load_file("test")
+    switch_to("WelcomeLink")
   end
     
   def load_file(fname)
@@ -91,7 +93,7 @@ class NoteController < OSX::NSObject
   
   # GET => Advice to a Young Scientst
   def windowWillClose(notification)
-    write_file("test")
+    write_file(@combo.stringValue)
     true
   end
   
