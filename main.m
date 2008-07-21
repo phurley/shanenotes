@@ -2,7 +2,7 @@
 //  main.m
 //  ShaneNotes
 //
-//  Created by Patrick Hurley on 7/19/08.
+//  Created by Patrick Hurley on 7/21/08.
 //  Copyright (c) 2008 __MyCompanyName__. All rights reserved.
 //
 

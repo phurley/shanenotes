@@ -13,8 +13,8 @@
 		4DDCA70A0ACC9A6100E082CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		4DDCA70C0ACC9A6100E082CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		4DDCA70D0ACC9A6100E082CE /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */; };
-		891C6B2E0E326FF4007C0E93 /* ShaneApp.rb in Resources */ = {isa = PBXBuildFile; fileRef = 891C6B2D0E326FF4007C0E93 /* ShaneApp.rb */; };
-		891C6B520E328CF5007C0E93 /* NoteController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 891C6B510E328CF5007C0E93 /* NoteController.rb */; };
+		891736880E34E77500C0B6A1 /* ShaneApp.rb in Resources */ = {isa = PBXBuildFile; fileRef = 891736860E34E77500C0B6A1 /* ShaneApp.rb */; };
+		891736890E34E77500C0B6A1 /* NoteController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 891736870E34E77500C0B6A1 /* NoteController.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		4DDCA7110ACC9A6100E082CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDCA7120ACC9A6100E082CE /* ShaneNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShaneNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		891C6B2D0E326FF4007C0E93 /* ShaneApp.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ShaneApp.rb; sourceTree = "<group>"; };
-		891C6B510E328CF5007C0E93 /* NoteController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = NoteController.rb; sourceTree = "<group>"; };
+		891736860E34E77500C0B6A1 /* ShaneApp.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ShaneApp.rb; sourceTree = "<group>"; };
+		891736870E34E77500C0B6A1 /* NoteController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = NoteController.rb; sourceTree = "<group>"; };
 		E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
 		E8F5E25803AEB7C803A81C6F /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +48,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				891736860E34E77500C0B6A1 /* ShaneApp.rb */,
+				891736870E34E77500C0B6A1 /* NoteController.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -81,14 +83,12 @@
 		29B97314FDCFA39411CA2CEA /* ShaneNotes */ = {
 			isa = PBXGroup;
 			children = (
-				891C6B510E328CF5007C0E93 /* NoteController.rb */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				4DDCA7110ACC9A6100E082CE /* Info.plist */,
-				891C6B2D0E326FF4007C0E93 /* ShaneApp.rb */,
 			);
 			name = ShaneNotes;
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 				4DDCA7060ACC9A6100E082CE /* MainMenu.nib in Resources */,
 				4DDCA7070ACC9A6100E082CE /* InfoPlist.strings in Resources */,
 				4DDCA7080ACC9A6100E082CE /* rb_main.rb in Resources */,
-				891C6B2E0E326FF4007C0E93 /* ShaneApp.rb in Resources */,
-				891C6B520E328CF5007C0E93 /* NoteController.rb in Resources */,
+				891736880E34E77500C0B6A1 /* ShaneApp.rb in Resources */,
+				891736890E34E77500C0B6A1 /* NoteController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
