@@ -63,6 +63,7 @@ class NoteController < OSX::NSObject
       length = stop - start
       range = NSRange.new(start, length)
       data.addAttribute_value_range(NSLinkAttributeName, match.first, range)
+      @text.setSpellingState_range(0, range)
     end
   end
   
