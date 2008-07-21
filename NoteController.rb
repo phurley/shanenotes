@@ -25,10 +25,9 @@ class NoteController < OSX::NSObject
   ib_outlet :combo
   ib_action :test
   
-  def textView_clickedOnLink_atIndex(tv, link, index)
-    puts "It worked: #{link}"
-    
-    unless ShaneApp.files.include?(link)
+  def textView_clickedOnLink_atIndex(tv, link, index)    
+    files = ShaneApp.files.map { |f| File.basename(f,'.rtf') }
+    unless index = files.index(link)
       data = NSText.new
       data.string = "Shane Note create #{Time.now.to_s}"
       fname = ShaneApp.mkfname(link)
@@ -38,13 +37,23 @@ class NoteController < OSX::NSObject
       data = data.RTFFromRange(everything)
       data.writeToFile_atomically(fname, false)
       ShaneApp.rescan
+      files = ShaneApp.files.map { |f| File.basename(f,'.rtf') }
+      index = files.index(link)
     end
     
     # load_file(link)
+    if index
+      @combo.selectItemAtIndex(index)
+    end
+    
     true
   end
   
   def test
+    update_links
+  end
+  
+  def update_links
     data = @text.textStorage
     everything = NSRange.new(0, data.length)
     data.removeAttribute_range(NSLinkAttributeName, everything)
@@ -68,6 +77,7 @@ class NoteController < OSX::NSObject
     
     everything = NSRange.new(0, @text.textStorage.length)
     @text.replaceCharactersInRange_withRTF(everything, data)
+    update_links
   end
 
   def write_file(fname)
@@ -99,6 +109,11 @@ class NoteController < OSX::NSObject
     fname = ShaneApp.files[note.object.indexOfSelectedItem]
     load_file(fname)
     puts @combo.stringValue
+  end
+
+  
+  def textDidChange(notification)
+    update_links
   end
   
 end
